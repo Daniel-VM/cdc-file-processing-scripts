@@ -1,5 +1,5 @@
 """
-    emm_donwload_makedb.py
+    emm_download_makedb.py
 
 This script downloads and processes .sds files from a specified remote FTP server directory.
 It filters for emm-specific .sds files, downloads them to a local directory, and converts their
