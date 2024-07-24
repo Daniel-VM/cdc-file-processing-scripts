@@ -119,7 +119,7 @@ def run_makedatabase_blast(fasta_file):
         sys.exit(1)
 
 def main():
-    parser = argparse.ArgumentParser(description='Download and process SDS files from an FTP server.')
+    parser = argparse.ArgumentParser(description='Download and process (and make BLAST database) of emm-SDS files from an FTP server.')
     parser.add_argument('--ftp_url', required=True, help='FTP URL')
     parser.add_argument('--remote_path', required=True, help='Remote path on the FTP server')
     parser.add_argument('--local_path', required=True, help='Local path to save the downloaded files')
