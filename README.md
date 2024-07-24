@@ -57,3 +57,26 @@ This command will:
 3. Process the SDS files to extract FASTA sequences.
 4. Save all FASTA sequences into a single multi-FASTA file.
 5. If the `--make_blastdb` flag is set, create a BLAST database from the multi-FASTA file with the specified database name.
+
+### Output
+- FASTA Files: SDS files are processed into individual FASTA files, each named after the corresponding SDS file.
+
+- Multi-FASTA File: All individual FASTA sequences are concatenated into a single multi-FASTA file, saved at the path specified by --multifasta_path.
+
+- BLAST Database: If the --make_blastdb flag is used, a BLAST database is created from the multi-FASTA file and saved with the name specified by --db_name.
+
+### Extension
+
+The generated BLAST database can now be used as input for tools such as emmtyper. Here’s an example command to use the created BLAST database with emmtyper:
+
+```sh
+emmtyper \
+        -w blast \
+        --keep  \
+        --blast_db 'path_to_blastdb/CDC_2024_TSEEM_EMM_DATABASE' \
+        --percent-identity 95 \
+        --culling-limit 5 \
+        --output results.out \
+        --output-format verbose \
+        'path_to/input_fasta_files.fasta'
+```
